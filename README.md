@@ -20,7 +20,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 ## Tutorial
 
 - LLMs from dummies - part 1
-  - [Video]()
+  - [Video](https://youtu.be/tMr08LaMDtA)
   - [Slides](./slides/LLMs_from_dummies_part_1.pdf)
   - [Notebook](./notebooks/LLMs_from_dummies_Part_1.ipynb)
 - LLMs from dummies - part 2
