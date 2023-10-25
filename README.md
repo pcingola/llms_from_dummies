@@ -6,7 +6,7 @@ This is a series of introductory tutorials about language models (such as GPT).
 
 A technical introduction to the topic of language models (LLMs), explaining the basic concepts, and creating sample code.
 
-In this tutorials we fully implement a language model from scratch; including all the tools to train and use the model.
+In these tutorials we fully implement a language model from scratch; including all the tools to train and use the model.
 
 ### Audience
 
@@ -51,27 +51,27 @@ You are NOT assumed to be an expert practitioner on neural nets.
   - Predicting the next token
   - Blocks and data flow
   - Nomenclature: `block_size`, `n_embed`, etc.
-- Language Model 1: Putting it all toghether
+- Language Model 1: Putting it all together
   - Model training: Boilerplate code
   - PyTorch implementation
   - Trivial tokenizer
   - Creating a Dataset
-  - Trainig loop
+  - Training loop
   - Predicting
   - Model performance: What went wrong?
 - Attention Revisited
   - Problem: "The model is cheating"
   - Masked attention
   - Softmax masking trick
-- Masked Attention: Impreoved model
+- Masked Attention: Improved model
 - Multi-Headed Attention
-- Possitional Encoding
+- Positional Encoding
 - Language Model 2
 - Feed-Forward layer: ReLU layer
 - Language Model 3
 - Transformer Blocks
 - Language Model 4
-- Trainign deep networks
+- Training deep networks
   - Vanishing & Exploding Gradients
   - Residual connections
   - Layer Normalization
