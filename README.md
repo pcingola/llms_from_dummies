@@ -30,7 +30,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 
 ## Topics
 
-**Part 1:**
+### Part 1
 - A simple language translation program
   - Tokens, dictionaries
   - Approximating keys: Levengstein distance
@@ -44,7 +44,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 - Tokenization: BPE (analogy to compression)
 - Embeddings (Word2vect, Autoencoder)
 
-**Part 2:**
+### Part 2
 - Brief recap of Part 1
 - Language model (moving away from the "translation" example)
 - How the model works 
@@ -68,18 +68,22 @@ You are NOT assumed to be an expert practitioner on neural nets.
 - Possitional Encoding
 - Language Model 2
 - Feed-Forward layer: ReLU layer
+- Language Model 3
 - Transformer Blocks
+- Language Model 4
 - Trainign deep networks
   - Vanishing & Exploding Gradients
   - Residual connections
   - Layer Normalization
   - Dropout
-- Transformer
+- Language Model 5
+  - Scaling the model
+- Transformer architecture
    - Encoders stack / Decoder stack
    - Contextual embeddings
    - Transformers
 
-**Part 3:**
+### Part 3
 - Pre-training
 - Training
 - Fine-tunning
@@ -90,7 +94,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
    - `Context`: Just add a sentence to the prompt
    - `Prompt engineering`: Similar to adding the right words in a Google search
 
-**Part 4:**
+### Part 4
 - Frameworks
 - LangChain
   - Key API concepts: `Models`,  `LLM`,  `Prompts`,  `Agents`
