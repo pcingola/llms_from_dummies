@@ -1,4 +1,4 @@
-# Language Models From Dummies
+# Large Language Models (LLMs) From Dummies: Tutorial
 
 This is a series of introductory tutorials about language models (such as GPT).
 
@@ -24,9 +24,9 @@ You are NOT assumed to be an expert practitioner on neural nets.
   - [Slides](./slides/LLMs_from_dummies_part_1.pdf)
   - [Notebook](./notebooks/LLMs_from_dummies_Part_1.ipynb)
 - LLMs from dummies - part 2
-  - [Video]()
+  - [Video](https://youtu.be/SGLJHH2Wzns)
   - [Slides](./slides/LLMs_from_dummies_part_2.pdf)
-  - [Notebook]()
+  - [Notebook](./notebooks/LLMs_from_dummies_Part_2.ipynb)
 
 ## Topics
 
