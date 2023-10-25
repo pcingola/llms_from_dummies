@@ -1,23 +1,34 @@
 # Language Models From Dummies
 
-This is a series of introductory talks about language models (such as GPT).
+This is a series of introductory tutorials about language models (such as GPT).
 
-**What:**
-These are basic, but technical introduction to the topic of language models, explaining the basics concepts and going over sample code.
- 
-**Who:**
-The audience is assumed to be technical, but non-experts on neural networks.  We assume basic coding skills and basic understanding of what a neural network is / what “back-propagation” is (if you don’t remember, a quick brush up these concepts before the talks should be enough). You are NOT assumed to be an expert practitioner on neural nets.
- 
-### Presentataions
+### Description
+
+A technical introduction to the topic of language models (LLMs), explaining the basic concepts, and creating sample code.
+
+In this tutorials we fully implement a language model from scratch; including all the tools to train and use the model.
+
+### Audience
+
+The audience is assumed to be technical, but non-experts on neural networks.
+
+We assume coding skills (Python), basic understanding of what a neural network is, what “back-propagation” is.
+If you don’t remember the concepts, a quick brush up before the tutorials should be enough.
+
+You are NOT assumed to be an expert practitioner on neural nets.
+
+## Tutorial
 
 - LLMs from dummies - part 1
   - [Video]()
-  - [Slides](./LLMs_from_dummies_part_1.pdf)
+  - [Slides](./slides/LLMs_from_dummies_part_1.pdf)
+  - [Notebook](./notebooks/LLMs_from_dummies_Part_1.ipynb)
 - LLMs from dummies - part 2
-  - [Video](./LLMs_from_dummies_part_2.pdf)
-  - 
+  - [Video]()
+  - [Slides](./slides/LLMs_from_dummies_part_2.pdf)
+  - [Notebook]()
 
-### Topics / Agenda:
+## Topics
 
 - Part 1:
   - A simple language translation program
@@ -40,7 +51,18 @@ The audience is assumed to be technical, but non-experts on neural networks.  We
     - Predicting the next token
     - Blocks and data flow
     - Nomenclature: `block_size`, `n_embed`, etc.
-  - 
+  - Language Model 1: Putting it all toghether
+  - Boilerplate code:
+    - PyTorch implementation
+    - Trivial tokenizer
+    - Creating a Dataset
+    - Trainig loop
+    - Generating with the model
+  - Language Model 1: Model performance. What went wrong?
+  - Attention Revisited
+    - Porblem: "The model is cheating"
+    - Masked attention
+
 - Stacking Blocks
    - Encoders stack / Decoder stack
    - Contextual embeddings
