@@ -84,17 +84,38 @@ You are NOT assumed to be an expert practitioner on neural nets.
    - Transformers
 
 ### Part 3
-- Pre-training
-- Training
-- Fine-tunning
-- Adapting: LORA, PERF methodologies
+
+- Running "Lit-Lllama" on an AWS Cloud
+  - Select an EC2 instance
+  - Installing GPU drivers
+  - Install "Lit-Llama" model
+
+- Transformer: Encode & Decoder
+  - Translation: How it operates
+- Contextual Embeddings
+  - Encoder-Decoder link
+- Vector databases
+  - Key Concepts
+  - Document summarizations
+  - Embedding similarity 
+- Pre-training vs Training
+  - Reinforcement Learning
+  - Proximal Policy Optimization (PPO)
+  - Instruct models
+- Fine-tunning vs Adapting
+  - LORA, PERF methodologies
 - Instruct models
-- Prompts all the way down
+- GPT: Generative Pre-trained Transformer
+- Model Scales
+  - GPT-1, GPT-2, GPT-3, GPT-4, PaLM
+  - Emergent behaviours
+  - Model training costs
+
+### Part 4
+- Prompts all the way down 
    - `Chat`: Just isolated requests with "memory" of conversations
    - `Context`: Just add a sentence to the prompt
    - `Prompt engineering`: Similar to adding the right words in a Google search
-
-### Part 4
 - Frameworks
 - LangChain
   - Key API concepts: `Models`,  `LLM`,  `Prompts`,  `Agents`
