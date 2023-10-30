@@ -30,7 +30,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 
 ## Topics
 
-### Part 1
+### Part 1: Attention
 - A simple language translation program
   - Tokens, dictionaries
   - Approximating keys: Levengstein distance
@@ -44,7 +44,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 - Tokenization: BPE (analogy to compression)
 - Embeddings (Word2vect, Autoencoder)
 
-### Part 2
+### Part 2: Transformers & GPT
 - Brief recap of Part 1
 - Language model (moving away from the "translation" example)
 - How the model works 
@@ -83,13 +83,11 @@ You are NOT assumed to be an expert practitioner on neural nets.
    - Contextual embeddings
    - Transformers
 
-### Part 3
-
+### Part 3: Train, Human feedback, and Model scales
 - Running "Lit-Lllama" on an AWS Cloud
   - Select an EC2 instance
   - Installing GPU drivers
   - Install "Lit-Llama" model
-
 - Transformer: Encode & Decoder
   - Translation: How it operates
 - Contextual Embeddings
