@@ -87,6 +87,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
    - Transformers
 
 ### Part 3: Train, Human feedback, and Model scales
+- Recap of previous tutorials
 - Running "Lit-Lllama" on an AWS Cloud
   - Select an EC2 instance
   - Installing GPU drivers
@@ -104,7 +105,9 @@ You are NOT assumed to be an expert practitioner on neural nets.
   - Proximal Policy Optimization (PPO)
   - Instruct models
 - Fine-tunning vs Adapting
-  - LORA, PERF methodologies
+  - LORA: Low Rank Adaptation
+  - PERF
+  - Frozen models + multiple adaptations
 - Instruct models
 - GPT: Generative Pre-trained Transformer
 - Model Scales
@@ -113,12 +116,20 @@ You are NOT assumed to be an expert practitioner on neural nets.
   - Model training costs
 
 ### Part 4
+- Recap of previous tutorials
+- LLMs API: Roles
 - Prompts all the way down 
-   - `Chat`: Just isolated requests with "memory" of conversations
-   - `Context`: Just add a sentence to the prompt
-   - `Prompt engineering`: Similar to adding the right words in a Google search
-- Frameworks
+  - Prompt engineering techniques
+  - Zero-Shot
+  - Few-Shot
+  - Chain of thought
+  - Tree of thought
+  - Function calls
 - LangChain
-  - Key API concepts: `Models`,  `LLM`,  `Prompts`,  `Agents`
+  - Key API concepts: 
+  - `LLM`,  `Prompts`,  `Agents`, `Models`,`Chat`, `Context`, `Tools`
+  - Output parser
   - Simple examples
 - Vector databases
+  - Indexing documents using embeddings
+  - 
