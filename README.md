@@ -88,7 +88,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 
 ### Part 3: Train, Human feedback, and Model scales
 - Recap of previous tutorials
-- Running "Lit-Lllama" on an AWS Cloud
+- Running "Lit-Lllama" on EC2. See [`install_llm_in_ec2.md`](./install_llm_in_ec2.md)
   - Select an EC2 instance
   - Installing GPU drivers
   - Install "Lit-Llama" model
@@ -117,19 +117,51 @@ You are NOT assumed to be an expert practitioner on neural nets.
 
 ### Part 4
 - Recap of previous tutorials
-- LLMs API: Roles
-- Prompts all the way down 
-  - Prompt engineering techniques
-  - Zero-Shot
-  - Few-Shot
-  - Chain of thought
-  - Tree of thought
-  - Function calls
-- LangChain
-  - Key API concepts: 
-  - `LLM`,  `Prompts`,  `Agents`, `Models`,`Chat`, `Context`, `Tools`
-  - Output parser
-  - Simple examples
+- Prompt engineering
+  - The prompt is the LLM's "API"
+  - Prompt length / information
+  - Why do oyu need "prompt engineering"
+  - Roles: system, user, assistant, function
+  - Prompt enginering techniques
+    - Zero-shot
+    - Few-Shot
+    - Chain of thought
+    - Tree of thought
+- Open API example (using `curl`)
+- Tools: Combining LLMs with external tools/functions
+  - Example from "Chain of thought"
+  - Function call (from OpenAI)
+  - Code example
+- Frameworks: LangChain
+  - Framework's abstractions
+  - Simple Code example
+  - LLMs, Prompt templates
+  - Output parsers
+  - Memory
+  - Chains
+  - Tools
+  - Agents / Code example
+  - OpenAI functions / Code example
 - Vector databases
-  - Indexing documents using embeddings
-  - 
+  - Why do we need them?
+  - Basic concepts
+  - Embedding vectors for document search
+  - Retreival-Augmented Generation
+  - Using LLMs with Vector Databases
+    - Refinement
+    - Map-Reduce
+- Quick review of scaling models in GPUs
+  - Single GPU
+  - Multiple GPUs: DDP, ZeRO, Pipeline-Parallelism, Naive Parallelism
+  - GPU usage Bubbles
+  - Tensor parallelism
+
+
+# Open LLama examples
+
+Running the Open LLama server / API examples.
+
+IMPORTANT:
+- This is supposed to be the directory where this repository is installed. Change to the appropriate location
+- We assume that a Python virtual environment is installed in the '.venv' directory
+
