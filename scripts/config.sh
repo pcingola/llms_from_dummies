@@ -10,11 +10,15 @@ cd $LM_HOME
 export SCRIPTS_DIR="$LM_HOME/scripts"
 export SRC_DIR="$LM_HOME/src"
 export LOGS_DIR="$LM_HOME/logs"
-export VECTOR_DB_DIR="$LM_HOME/weaviate"
 
 # Servers
 export SERVER="127.0.0.1"
 export SERVER_PORT=8000
 
+# API Server
+# If this variable is set to 'True', the API server will only load a "fake" LLM (this is used for debugging)
+export TEST_LLM="True"
+
 # Activate environment
-source "$LM_HOME/.venv/bin/activate"
+export VENV_DIR="$LM_HOME/.venv/bin/activate"
+source "$VENV_DIR"

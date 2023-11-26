@@ -18,8 +18,10 @@ echo "Models:"
 curl "http://$SERVER:$SERVER_PORT/v1/models" | jq .
 
 
-# "model": "fake",
-# "model": "llama_7b",
+# NOTE: Change the lines (e.g. 'fake' models is used for debugging)
+#     "model": "fake",
+#     "model": "llama_7b",
+
 echo
 echo
 echo "Completion:"
@@ -28,7 +30,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "model": "llama_7b",
+  "model": "fake",
   "prompt": "Hello, my name is",
   "suffix": "string",
   "max_tokens": 50,

@@ -157,11 +157,41 @@ You are NOT assumed to be an expert practitioner on neural nets.
   - Tensor parallelism
 
 
-# Open LLama examples
+# LLama examples
 
-Running the Open LLama server / API examples.
+### Description
 
-IMPORTANT:
-- This is supposed to be the directory where this repository is installed. Change to the appropriate location
-- We assume that a Python virtual environment is installed in the '.venv' directory
+There are examples for a simple implementation of an LLM, an API server, and using LangChain with this server:
+
+1. Running an LLM on EC2: Example of installing a LLama model on an EC2 instance and using it via command line. See details in [`install_llm_in_ec2.md`](./install_llm_in_ec2.md)
+2. LLM API Server: Example of creating an API server (FastAPI) that loads an LLM (the one in the previous example) and serves queries via a very simple API.
+3. LangChain: Example of connecting LangChain to the API server created in the previous step.
+
+### Configuration
+
+The configuration directories are in `scripts/config.sh`, please change the directories appropriately
+
+- `LM_HOME`: This is supposed to be installed in `$HOME/llms_from_dummies`. You need to change this value if you are installing in another directory.
+- `VENV_DIR`: We assume that a Python virtual environment is installed in the `$LM_HOME/.venv` directory
+- `TEST_LLM`: If this variable is set to 'True', the API server will only load a "fake" LLM. This is usefull when debugging the API server (it is much faster than loading the LLama model)
+- `SERVER`, `SERVER_PORT`: Server's IP address and port
+
+### Install dependencies
+```
+pip install -r requirements.txt
+```
+
+### Runnign the API server
+
+This server loads a 'lit-llama' model and serves queries via a simple API (FastAPI server implementation)
+
+```
+./scripts/run_server.sh
+```
+
+**WARNING::** If `TEST_LLM` in `scripts/config.sh` is set to 'True', the API server will only load a "fake" LLM (this is used for debugging)
+
+### Test API queries
+
+The script `./scripts/test_server.sh` runs a few simple queries against the API server and displays the JSON results (you need `jq` installed).
 
