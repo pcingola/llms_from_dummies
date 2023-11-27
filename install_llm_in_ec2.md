@@ -123,5 +123,5 @@ Weights are converted to `bpfloat16``
 
 ```
 # Note: Time ~3 minutes
-time python3 generate.py --prompt "Hello, my name is"
+time python3 lit-llama/generate.py --prompt "Hello, my name is"
 ```

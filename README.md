@@ -194,12 +194,12 @@ pip install -r requirements.txt
 #   apt install git-lfs
 git-lfs install
 # Download weights from HuggingFace
-git clone https://huggingface.co/openlm-research/open_llama_7b data/checkpoints/open-llama/7B
+git clone https://huggingface.co/openlm-research/open_llama_7b checkpoints/open-llama/7B
 
 # Convert weights
 time python3 \
     lit-llama/scripts/convert_hf_checkpoint.py \
-    --checkpoint_dir data/checkpoints/open-llama/7B/ \
+    --checkpoint_dir checkpoints/open-llama/7B/ \
     --model_size 7B
 ```
 

@@ -30,4 +30,4 @@ LM_HOME_DEFAULT = os.environ.get("HOME") + "/llms_from_dummies"
 LM_HOME = Path(get_env_var("LM_HOME", LM_HOME_DEFAULT))
 
 # DATA_DIR: Data directory
-DATA_DIR = LM_HOME / 'data'
+CHECKPOINTS_DIR = LM_HOME / 'checkpoints'

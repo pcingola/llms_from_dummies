@@ -10,7 +10,7 @@ import torch
 from torch import nn
 
 from .model import Model, ModelInfo
-from ..config import DATA_DIR
+from ..config import CHECKPOINTS_DIR
 from litllama.lit_llama import LLaMA, Tokenizer
 from litllama import generate as litllama_generate
 
@@ -64,10 +64,10 @@ class LLamaModel(Model):
 
     def load(self):
         """ Load a model and tokenizer """
-        model_path = DATA_DIR / Path("checkpoints/lit-llama/7B/lit-llama.pth")
+        model_path = CHECKPOINTS_DIR / Path("lit-llama/7B/lit-llama.pth")
         self.model_nn = self.load_model(model_path)
         # Load tokenizer
-        tokenizer_path = DATA_DIR / Path("checkpoints/lit-llama/tokenizer.model")
+        tokenizer_path = CHECKPOINTS_DIR / Path("lit-llama/tokenizer.model")
         logger.info(f"Loading toeknizer from '{tokenizer_path.absolute()}'")
         self.tokenizer = Tokenizer(tokenizer_path)
 
