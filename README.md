@@ -217,6 +217,10 @@ This server loads a 'lit-llama' model and serves queries via a simple API (FastA
 
 The script `./scripts/test_server.sh` runs a few simple queries against the API server and displays the JSON results (you need `jq` installed).
 
+This is what it looks like (runing the test and server in two terminals):
+
+![](./img/test.png)
+
 ### Configuration
 
 The configuration directories are in `scripts/config.sh`, please change the directories appropriately
