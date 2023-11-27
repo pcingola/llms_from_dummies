@@ -4,22 +4,22 @@
 
 Some examples of Single GPU instances (as of July 2023)
 
-| Instance type | GPU  | GPUs  | GPU Ram (GB) | Cost ($/hour) |
-|---------------|------|-------|--------------|---------------|
-| p3.2xlarge    | V100 |   1   |              | $3            |
-| g5.2xlarge    | A10G |   1   |     24       | $1.2          | <-- Choice for 7b model
-| g4dn.2xlarge  | T4   |   1   |     16       | $0.72         |
-| g5dn.2xlarge  | T4G  |   1   |     16       | $1?           |
+| Instance type | GPU  | GPUs  | GPU Ram (GB) |
+|---------------|------|-------|--------------|
+| p3.2xlarge    | V100 |   1   |              |
+| g5.2xlarge    | A10G |   1   |     24       | <-- Choice for 7b model
+| g4dn.2xlarge  | T4   |   1   |     16       |
+| g5dn.2xlarge  | T4G  |   1   |     16       |
 
 Some examples of Multiple GPU instances (as of July 2023)
 
-| Instance type | GPU  | GPUs  | vCPUs | Ram  | GPU Ram (GB) | Cost ($/hour) |
-|---------------|------|-------|-------|------|--------------|---------------|
-| g4dn.12xlarge  |     | 4     | 48    | 192  |  64          |   3.9         |
-| g4ad.16xlarge  |     | 4     | 64    | 256  |  32          |   3.5         |
-| g5.12xlarge    |     | 4     | 96    | 48   |  192         |               |
-| p3.8xlarge     |     | 4     | 32    | 244  |  64          |  12.24        |
-| p4d.24xlarge   |     | 8     | 96    | 1152 |  320         |  32.75g       |
+| Instance type | GPU  | GPUs  | vCPUs | Ram  | GPU Ram (GB) |
+|---------------|------|-------|-------|------|--------------|
+| g4dn.12xlarge  |     | 4     | 48    | 192  |  64          |
+| g4ad.16xlarge  |     | 4     | 64    | 256  |  32          |
+| g5.12xlarge    |     | 4     | 96    | 48   |  192         |
+| p3.8xlarge     |     | 4     | 32    | 244  |  64          |
+| p4d.24xlarge   |     | 8     | 96    | 1152 |  320         |
 
 ## EC2 instance setup
 
@@ -27,19 +27,17 @@ Log into the instance (e.g. using `ssh`)
 
 ### Setup
 
+Use `root` user
+
+```
+sudo -i
+```
+
 Update software, kernel, and restart the instance
 ```
 apt update
-apt upgrade
+apt -y upgrade
 shutdown -r now # The instance will restart, you'll need to login again
-```
-
-Setup disk, in this example I added some disk (i.e. an EBS volume)
-```
-# Note: In my case the block device for the disk is nvme1n1, this might be different for you
-mkfs.ext4 /dev/nvme1n1
-mkdir /data
-mount /data /dev/nvme1n1
 ```
 
 ### Install Cuda drivers
@@ -47,7 +45,8 @@ mount /data /dev/nvme1n1
 Refence: [Nvidia for Ubuntu LTS](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts)
 
 ```
-sudo apt-get install linux-headers-$(uname -r)
+# Run these are root
+apt-get install linux-headers-$(uname -r)
 
 # Install the CUDA repository public GPG key.
 # This can be done via the cuda-keyring package or a manual installation of the key. 
@@ -65,17 +64,17 @@ dpkg -i cuda-keyring_1.0-1_all.deb
 
 apt-get update
 
-apt-get -y install cuda-drivers
+apt-get install -y cuda-drivers
 ```
 
 Check CUDA drivers installation
 
 ```
 # Install Python pip
-apt install python3-pip
+apt install -y python3-pip
 
 # Install Torch
-pip3 install torch torchvision torchaudio
+pip install torch torchvision torchaudio
 
 # Check if cuda enabled. Should output "True"
 python3 -c "import torch; print(torch.cuda.is_available())"
@@ -85,7 +84,7 @@ python3 -c "import torch; print(torch.cuda.is_available())"
 
 Install Lit-LLama repo
 ```
-cd /data/
+cd 
 git clone https://github.com/Lightning-AI/lit-llama
 ```
 

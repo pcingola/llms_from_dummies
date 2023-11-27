@@ -40,3 +40,13 @@ typing_extensions==4.8.0
 urllib3==2.1.0
 uvicorn==0.24.0.post1
 yarl==1.9.3
+torch>=2.0.0
+# From lit-llama
+lightning @ git+https://github.com/Lightning-AI/lightning@master
+sentencepiece
+tqdm  # convert_checkpoint.py
+numpy  # train.py dataset memmap
+jsonargparse[signatures]  # generate.py, convert_checkpoint.py CLI
+bitsandbytes  # quantization.py
+datasets  # evaluate.py
+zstandard  # prepare_redpajama.py
