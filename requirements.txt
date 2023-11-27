@@ -13,8 +13,8 @@ fsspec==2023.10.0
 h11==0.14.0
 idna==3.6
 Jinja2==3.1.2
-lightning==2.1.2
-lightning-utilities==0.10.0
+lightning
+lightning-utilities
 MarkupSafe==2.1.3
 mpmath==1.3.0
 multidict==6.0.4
