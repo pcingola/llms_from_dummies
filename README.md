@@ -170,7 +170,7 @@ There are examples for a simple implementation of an LLM, an API server, and usi
 2. LLM API Server: Example of creating an API server (FastAPI) that loads an LLM (the one in the previous example) and serves queries via a very simple API.
 3. LangChain: Example of connecting LangChain to the API server created in the previous step.
 
-### Install
+### Install & Run
 
 ```bash
 # Clone repository
@@ -203,6 +203,19 @@ time python3 \
     --model_size 7B
 ```
 
+### Runnign the API server
+
+This server loads a 'lit-llama' model and serves queries via a simple API (FastAPI server implementation)
+```
+# Run server
+./scripts/run_server.sh
+```
+
+**WARNING::** If `TEST_LLM` in `scripts/config.sh` is set to 'True', the API server will only load a "fake" LLM (this is used for debugging)
+
+### Test API queries
+
+The script `./scripts/test_server.sh` runs a few simple queries against the API server and displays the JSON results (you need `jq` installed).
 
 ### Configuration
 
@@ -213,22 +226,5 @@ The configuration directories are in `scripts/config.sh`, please change the dire
 - `TEST_LLM`: If this variable is set to 'True', the API server will only load a "fake" LLM. This is usefull when debugging the API server (it is much faster than loading the LLama model)
 - `SERVER`, `SERVER_PORT`: Server's IP address and port
 
-### Install dependencies
-```
-pip install -r requirements.txt
-```
 
-### Runnign the API server
-
-This server loads a 'lit-llama' model and serves queries via a simple API (FastAPI server implementation)
-
-```
-./scripts/run_server.sh
-```
-
-**WARNING::** If `TEST_LLM` in `scripts/config.sh` is set to 'True', the API server will only load a "fake" LLM (this is used for debugging)
-
-### Test API queries
-
-The script `./scripts/test_server.sh` runs a few simple queries against the API server and displays the JSON results (you need `jq` installed).
 

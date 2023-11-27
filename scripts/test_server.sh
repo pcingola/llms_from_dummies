@@ -30,7 +30,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "model": "fake",
+  "model": "llama_7b",
   "prompt": "Hello, my name is",
   "suffix": "string",
   "max_tokens": 50,
