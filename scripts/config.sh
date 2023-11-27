@@ -17,7 +17,7 @@ export SERVER_PORT=8000
 
 # API Server
 # If this variable is set to 'True', the API server will only load a "fake" LLM (this is used for debugging)
-export TEST_LLM="True"
+export TEST_LLM="False"
 
 # Activate environment
 export VENV_DIR="$LM_HOME/.venv/bin/activate"

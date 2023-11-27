@@ -64,7 +64,7 @@ dpkg -i cuda-keyring_1.0-1_all.deb
 
 apt-get update
 
-apt-get install -y cuda-drivers
+apt-get install cuda-drivers
 ```
 
 Check CUDA drivers installation
@@ -74,7 +74,7 @@ Check CUDA drivers installation
 apt install -y python3-pip
 
 # Install Torch
-pip install torch torchvision torchaudio
+pip3 install torch torchvision torchaudio
 
 # Check if cuda enabled. Should output "True"
 python3 -c "import torch; print(torch.cuda.is_available())"
@@ -84,7 +84,7 @@ python3 -c "import torch; print(torch.cuda.is_available())"
 
 Install Lit-LLama repo
 ```
-cd 
+cd
 git clone https://github.com/Lightning-AI/lit-llama
 ```
 
@@ -112,7 +112,7 @@ Convert weights (~5 min)
 ```
 time python3 \
     scripts/convert_hf_checkpoint.py \
-    --checkpoint_dir checkpoints/open-llama/7B/ \
+    --checkpoint_dir data/checkpoints/open-llama/7B/ \
     --model_size 7B
 ```
 
@@ -123,5 +123,5 @@ Weights are converted to `bpfloat16``
 
 ```
 # Note: Time ~3 minutes
-time python generate.py --prompt "Hello, my name is"
+time python3 generate.py --prompt "Hello, my name is"
 ```

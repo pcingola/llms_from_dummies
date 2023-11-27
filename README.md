@@ -170,6 +170,40 @@ There are examples for a simple implementation of an LLM, an API server, and usi
 2. LLM API Server: Example of creating an API server (FastAPI) that loads an LLM (the one in the previous example) and serves queries via a very simple API.
 3. LangChain: Example of connecting LangChain to the API server created in the previous step.
 
+### Install
+
+```bash
+# Clone repository
+cd
+git clone https://github.com/pcingola/llms_from_dummies.git
+
+# Create virtual environment
+# Note: You might need to install Python's "venv" by runnign something like
+#   apt install -y python3.10-venv
+cd llms_from_dummies/
+python3 -m venv .venv
+
+# Activate virtual environment
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Initialize git-lfs
+# Note: You may need to install git-lfs:
+#   apt install git-lfs
+git-lfs install
+# Download weights from HuggingFace
+git clone https://huggingface.co/openlm-research/open_llama_7b data/checkpoints/open-llama/7B
+
+# Convert weights
+time python3 \
+    lit-llama/scripts/convert_hf_checkpoint.py \
+    --checkpoint_dir data/checkpoints/open-llama/7B/ \
+    --model_size 7B
+```
+
+
 ### Configuration
 
 The configuration directories are in `scripts/config.sh`, please change the directories appropriately
