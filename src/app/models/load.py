@@ -31,7 +31,7 @@ def get_models_info() -> list[ModelInfo]:
     return [_models[_id].model_info for _id in _models.keys()]
 
 
-def load_model_fake(data_dir: Path):
+def load_model_fake():
     """ Load a fake model (used for testing the API) """
     logger.info("Load 'Fake' model")
     model_info_fake = ModelInfo(id="fake", owned_by="Nobody", permissions=[])
@@ -40,7 +40,7 @@ def load_model_fake(data_dir: Path):
     return model
 
 
-def load_model_llama_7b(data_dir: Path):
+def load_model_llama_7b():
     """ Load LLama '7B' model """
     logger.info("Load 'LLama 7B' model")
     model_info_llama_7b = ModelInfo(id="llama_7b", owned_by="Nobody", permissions=[])
@@ -49,13 +49,13 @@ def load_model_llama_7b(data_dir: Path):
     return model
 
 
-def load_models(data_dir: Path, test_models: bool = False):
+def load_models(test_models: bool = False):
     """ Load ALL models on server startup """
     logger.info("Load ML models")
     # Load fake model (this is used for testing the API)
-    _models["fake"] = load_model_fake(data_dir)
+    _models["fake"] = load_model_fake()
     if test_models:
         logger.info(f"Only loading test models")
         return
     # Load 'llama_7b' model
-    _models["llama_7b"] = load_model_llama_7b(data_dir)
+    _models["llama_7b"] = load_model_llama_7b()
