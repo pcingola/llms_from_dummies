@@ -91,7 +91,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 
 ### Part 3: Train, Human feedback, and Model scales
 - Recap of previous tutorials
-- Running "Lit-Lllama" on EC2. See [`install_llm_in_ec2_comand_line.md.md`](./install_llm_in_ec2_comand_line.md.md)
+- Running "Lit-Lllama" on EC2. See [`install_llm_in_ec2_comand_line.md.md`](./install_llm_in_ec2_comand_line.md)
   - Select an EC2 instance
   - Installing GPU drivers
   - Install "Lit-Llama" model
