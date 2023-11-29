@@ -31,7 +31,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
   - [Video](https://youtu.be/uYmV0UTn9bE)
   - [Slides](./slides/LLMs_from_dummies_part_3.pdf)
 - LLMs from dummies - part 4
-  - [Video]()
+  - [Video](https://www.youtube.com/watch?v=h1v2St-3_l0)
   - [Slides](./slides/LLMs_from_dummies_part_4.pdf)
 
 ## Topics
