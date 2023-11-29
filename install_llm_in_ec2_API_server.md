@@ -41,7 +41,7 @@ git-lfs install
 git clone https://huggingface.co/openlm-research/open_llama_7b checkpoints/open-llama/7B
 
 # Convert weights (takes ~2 minutes)
-time python3 \
+python3 \
     lit-llama/scripts/convert_hf_checkpoint.py \
     --checkpoint_dir checkpoints/open-llama/7B/ \
     --model_size 7B
@@ -52,8 +52,13 @@ time python3 \
 This server loads a 'lit-llama' model and serves queries via a simple API (FastAPI server implementation)
 ```
 # Run server
+# Note: Loading the Llama model takes ~1 minute, the server
+#       cannot anser requests until the model lo loaded.
 ./scripts/run_server.sh
 ```
+
+![API server start](./img/api_server_start_example.png)
+
 
 **WARNING::** If `TEST_LLM` in `scripts/config.sh` is set to 'True', the API server will only load a "fake" LLM (this is used for debugging)
 
@@ -63,7 +68,7 @@ The script `./scripts/test_server.sh` runs a few simple queries against the API 
 
 This is what it looks like (runing the test and server in two terminals):
 
-![](./img/test.png)
+![API server start](./img/test.png)
 
 ### Configuration
 

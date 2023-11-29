@@ -12,12 +12,6 @@ echo
 echo "Info:"
 curl "http://$SERVER:$SERVER_PORT/v1/info" | jq .
 
-echo
-echo
-echo "Models:"
-curl "http://$SERVER:$SERVER_PORT/v1/models" | jq .
-
-
 # NOTE: Change the lines (e.g. 'fake' models is used for debugging)
 #     "model": "fake",
 #     "model": "llama_7b",

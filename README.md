@@ -162,3 +162,18 @@ Detailed tutorial steps: See [`install_llm_in_ec2_comand_line.md`](./install_llm
   - Tensor parallelism
 
 Detailed tutorial steps: See [`install_llm_in_ec2_API_server.md`](./install_llm_in_ec2_API_server.md) for details on how to install the example LLM API server.
+
+# Examples
+
+See this [Jupyter Notebook](./src/lang_chain_llm_open_llama.ipynb) on using LangChain with your own LLM and API server running on an EC2 instance
+
+![](./img/langchain_with_llm_api_server.png)
+
+
+See [`install_llm_in_ec2_API_server.md`](./install_llm_in_ec2_API_server.md) for details on how to install the example LLM API server.
+
+![](img/test.png)
+
+See [`install_llm_in_ec2_comand_line.md`](./install_llm_in_ec2_comand_line.md) for details on how to install the example LLM API 
+
+![](./img/install_llm_in_ec2_predict.png)
