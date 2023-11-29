@@ -1,4 +1,4 @@
-# EC2 instance
+# Install LLM in an EC2 instance (Command line)
 
 ## Instance types
 
@@ -37,7 +37,6 @@ Update software, kernel, and restart the instance
 ```
 apt update
 apt -y upgrade
-shutdown -r now # The instance will restart, you'll need to login again
 ```
 
 ### Install Cuda drivers
@@ -64,14 +63,24 @@ dpkg -i cuda-keyring_1.0-1_all.deb
 
 apt-get update
 
-apt-get install cuda-drivers
+apt-get install -y cuda-drivers
 ```
 
-Check CUDA drivers installation
+**Check CUDA drivers**
 
+To check CUDA drivers, you can use Python Torch
 ```
-# Install Python pip
+# Install Python's "venv" and pip
+apt install -y python3.10-venv
 apt install -y python3-pip
+
+# Create a test directory for the packages
+mkdir test_cuda
+cd test_cuda
+
+# Create and activate environment
+python3 -m venv .
+source ./bin/activate
 
 # Install Torch
 pip3 install torch torchvision torchaudio
@@ -80,9 +89,15 @@ pip3 install torch torchvision torchaudio
 python3 -c "import torch; print(torch.cuda.is_available())"
 ```
 
+De-activate virtuale environment
+```
+deactivate
+```
+
+## Lit-LLama
+
 ### Install Lit-LLama software
 
-Install Lit-LLama repo
 ```
 cd
 git clone https://github.com/Lightning-AI/lit-llama
@@ -91,37 +106,46 @@ git clone https://github.com/Lightning-AI/lit-llama
 Install required packages
 ```
 cd lit-llama/
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
 Install Git-LFS so we can download the weights from HuggingFace
 ```
-apt install git-lfs
+apt install -y git-lfs
 git-lfs install
 ```
 
-### Install Lit-LLama-7B model
+### Install Lit-LLama-7B model (weights)
 
 Download and convert weights from OpenLLama.
 ```
-# Note: Download weights (this takes ~15 minutes)
-git clone https://huggingface.co/openlm-research/open_llama_7b data/checkpoints/open-llama/7B
+# Note: Download weights (this takes ~5 minutes)
+git clone https://huggingface.co/openlm-research/open_llama_7b checkpoints/open-llama/7B
 ```
 
-Convert weights (~5 min)
+Example screen capture:
+![Example screen capture](img/install_llm_in_ec2_download_weights.png)
+
+Convert weights (~2 minutes)
 ```
-time python3 \
+python3 \
     scripts/convert_hf_checkpoint.py \
-    --checkpoint_dir data/checkpoints/open-llama/7B/ \
+    --checkpoint_dir checkpoints/open-llama/7B/ \
     --model_size 7B
 ```
 
-## Test install
+![Example screen capture](img/install_llm_in_ec2_convert_weights.png)
+
+### Predict using LLM (command line)
 
 Generate. This requires ~14GB of GPU memory.
 Weights are converted to `bpfloat16``
 
 ```
-# Note: Time ~3 minutes
-time python3 lit-llama/generate.py --prompt "Hello, my name is"
+# Note: Time ~30 seconds
+python3 generate.py --prompt "Hello, my name is"
 ```
+
+![Example screen capture](img/install_llm_in_ec2_predict.png)
