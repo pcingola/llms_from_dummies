@@ -17,20 +17,20 @@ If you don’t remember the concepts, a quick brush up before the tutorials shou
 
 You are NOT assumed to be an expert practitioner on neural nets.
 
-## Tutorial
+## Tutorials
 
-- LLMs from dummies - part 1
+- Part 1: "Attention"
   - [Video](https://youtu.be/tMr08LaMDtA)
   - [Slides](./slides/LLMs_from_dummies_part_1.pdf)
   - [Notebook](./notebooks/LLMs_from_dummies_Part_1.ipynb)
-- LLMs from dummies - part 2
+- Part 2: "Transformers & GPT"
   - [Video](https://youtu.be/SGLJHH2Wzns)
   - [Slides](./slides/LLMs_from_dummies_part_2.pdf)
   - [Notebook](./notebooks/LLMs_from_dummies_Part_2.ipynb)
-- LLMs from dummies - part 3
+- Part 3: "Train, Human feedback, and Model scales"
   - [Video](https://youtu.be/uYmV0UTn9bE)
   - [Slides](./slides/LLMs_from_dummies_part_3.pdf)
-- LLMs from dummies - part 4
+- Part 4: "Prompt Engineering, Langchain and Vector Databases"
   - [Video](https://www.youtube.com/watch?v=h1v2St-3_l0)
   - [Slides](./slides/LLMs_from_dummies_part_4.pdf)
 
@@ -120,7 +120,7 @@ You are NOT assumed to be an expert practitioner on neural nets.
 
 Detailed tutorial steps: See [`install_llm_in_ec2_comand_line.md`](./install_llm_in_ec2_comand_line.md) for details on how to install the example LLM API 
 
-### Part 4
+### Part 4: Prompt Engineering, Langchain and Vector Databases
 - Recap of previous tutorials
 - Prompt engineering
   - The prompt is the LLM's "API"
